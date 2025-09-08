@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donation Page Webpage 2024 Save Lives NGO</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" type="text/css" />
+
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      box-sizing: border-box;
+      background-color: #833556;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header-hero-wrapper {
+      background-image: url('image-2-kids.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      flex: 0 0 auto; 
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      position: relative;
+      width: 100%;
+      z-index: 100;
+    }
+
+    header img {
+      width: 150px;
+      height: auto;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav ul li {
+      margin-left: 10px;
+    }
+
+    nav {
+      margin-right: 100px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.1em;
+      font-weight: 200;
+      position: relative;
+    }
+
+    nav a:hover {
+      color: #ff4500;
+    }
+
+    nav a.active::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: #fff;
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+    }
+
+    .banner {
+      position: relative;
+      background-image: url('Donation.jpg');
+      height: 320px;
+      width: 100%;
+      background-size: cover; 
+      background-position: center;
+      background-repeat: no-repeat; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      font-size: 2em;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .banner::after {
+      content: "";
+      background-color: rgba(0, 0, 0, 0.3); 
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .banner h1 {
+       position: relative;
+       z-index: 2; 
+       margin: 0; 
+    }
+
+    .textbox {
+      flex: 1; 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #fff;
+      color: #333;
+      padding: 30px;
+      margin: 20px auto;
+      width: 94%;
+      border-radius: 6px;
+      box-shadow: 0 0 8px #669999;
+    }
+
+    .textbox h3 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .textbox p {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .donation-wrapper {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #833556;
+      margin-top: 20px;
+      width: 80%;
+      padding: 30px 0;
+      border-radius: 1%;
+    }
+
+    .info {
+      font-size: 1.1em;
+      width: 40%;
+    }
+
+    form input, form textarea {
+      width: 40%;
+      padding: 15px;
+      margin: 10px 0;
+      border: 1 px solid #ccc;
+      border-radius: 5px;
+      font-size: 1em;
+      color: #333;
+    }
+
+    form button {
+      background-color: #2a8010;
+      color: #fff;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #000;
+    }
+
+    label {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      color: #fff;
+      font-weight: bold;
+    }
+    
+    span {
+      color: #2a8010;
+      font-weight: bold;
+      font-size: 1.2em
+    }
+
+    footer {
+      background-color: #0f0f0f;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: auto;
+      width: 100%;
+    }
+
+    footer p {
+      color: rgb(238, 234, 234);
+      margin: 0;
+      font-weight: 200;
+      font-size: 0.7rem;
+      font-family: Arial, Helvetica, sans-serif;  
+    }
+
+    .popup-message {
+      position: fixed;
+      top: 40px;
+      left: 50%;
+      transform: translate(-50%);
+      background-color: #fff;
+      color: #000;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      display: none;
+      z-index: 200;
+    }
+
+    .popup-message p {
+      font-size: 18px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .popup-message button {
+      background-color: #833556;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .popup-message button:hover {
+      background-color: #833556;
+    }
+
+    .popup-message.show {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header-hero-wrapper">
+    <header>
+      <img src="trans-1.svg" alt="NGO Logo" />
+      <nav>
+        <ul>
+          <li><a href="Home-Page.html">Home</a></li>
+          <li><a href="Project-Page.html">Projects</a></li>
+          <li><a href="About-Page.html">About</a></li>
+          <li><a href="Contact-Page.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="textbox">
+
+      <div class="banner">
+        <h1>Support Us with Your Donations</h1>
+      </div>
+
+      <div class="donation-wrapper">
+        <div class="info">
+          <h3>How to Donate with Us:</h3>
+          <p>At <strong>Save</strong> <span>Lives</span>, we are always grateful for the donations we receive from around the world. These donations help us uplift the lives of underprivileged and orphaned children. You can kindly donate by filling out the form below with your name, email, and the amount you'd like to donate. Every donation makes a huge difference for our children. Donations are also always welcomed and appreciated at our facilities.</p>
+        </div>
+
+        <form id="donation-form" class="Donation">
+          <label for="donorName">Name: </label>
+          <input type="text" name="donor-name" required placeholder="Your Name">
+          
+          <label for="donorEmail">Email: </label>
+          <input type="email" name="donor-email" required placeholder="Your Email">
+          
+          <label for="amount">Donation Amount: </label>
+          <input type="number" name="amount" required placeholder="Donation Amount" id="donation-amount">
+          
+          <button type="submit">Donate</button>
+        </form>
+
+        <div class="popup-message">
+          <p id="popup-message-text"></p>
+          <button id="close-popup">Close</button>
+        </div>
+      </div>
+    </div>
+
+  <footer>
+    <p>&copy; 2024 Save Lives NGO. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('donation-form');
+ const popupMessage = document.querySelector('.popup-message');
+    const popupMessageText = document.getElementById('popup-message-text');
+    const closePopupButton = document.getElementById('close-popup');
+    const donationAmountInput = document.getElementById('donation-amount');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const donationAmount = donationAmountInput.value;
+      popupMessageText.innerHTML = `<strong>R${donationAmount} Received.</strong><br> Your Donation will go a long way to help us provide basic necessities for the people on ground. Thank you so very much for your support!`;
+      popupMessage.classList.add('show');
+    });
+
+    closePopupButton.addEventListener('click', () => {
+      popupMessage.classList.remove('show');
+    });
+  </script>
+
+ </body>
+</html>

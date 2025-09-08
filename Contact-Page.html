@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Save Lives NGO</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+            background-color: #0f0f0f;
+            color: #ffffff;
+            height: 100%;
+        }
+
+        .header-hero-wrapper {
+            background-image: url('image-2-kids.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            position: relative;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        header img {
+            width: 150px;
+            height: auto;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 10px;
+        }
+
+        nav {
+            margin-right: 110px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.1em;
+            font-weight: 200;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #ff4500;
+        }
+
+        nav a.active::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px; 
+            background-color: #fff; 
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
+
+        .donate-btn {
+            background-color: #fff;
+            color: #833556;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-left: 20px;
+        }
+
+        .donate-btn:hover {
+            background-color: #c43b09;
+        }
+
+        .contact-page-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 20px;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .contact-header h1 {
+            font-size: 2.8em;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .contact-header p {
+            font-size: 1.2em;
+            color: #e0e0e0;
+        }
+
+        .contact-form, .contact-details {
+            background-color: #1f1f1f;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+        }
+
+        .contact-form h2, .contact-details h2 {
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 95%;
+            padding: 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: #ffffff;
+            font-size: 1em;
+        }
+
+        .contact-form input::placeholder, .contact-form textarea::placeholder {
+            color: #999;
+        }
+
+        .contact-form button {
+            background-color: #d88811;
+            color: #ffffff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #ff9900;
+        }
+
+        .contact-details p {
+            color: #e0e0e0;
+            line-height: 1.8;
+        }
+
+        .contact-details .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons img {
+            width: 24px; 
+            height: 24px;
+            margin: 0 5px; 
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons img:hover {
+            transform: scale(1.5);
+        }
+
+        footer {
+            background-color: #0f0f0f;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            width: 100%;
+            bottom: 0;
+            position: relative;
+        }
+
+        footer p {
+            color: rgb(238, 234, 234);
+            margin: 0;
+            font-weight: 200;
+            font-size: 0.7rem;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .popup-message {
+            position: fixed;
+            top: 40px;
+            left: 50%;
+            transform: translate(-50%);
+            background-color: #fff;
+            color: #000;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            display: none;
+        }
+
+        .popup-message p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .popup-message button {
+            background-color: #833556;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .popup-message button:hover {
+            background-color: #833556;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header-hero-wrapper">
+        <header>
+            <img src="trans-1.svg" alt="NGO Logo" />
+            <nav>
+                <ul>
+                    <li><a href="Home-Page.html">Home</a></li>
+                    <li><a href="Project-Page.html">Projects</a></li>
+                    <li><a href="About-Page.html">About</a></li>
+                    <li><a href="Contact-Page.html" class="active">Contact</a></li>
+                    <li><a href="Donation-Page.html" class="donate-btn">Donate</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="contact-page-container">
+            <div class="contact-header">
+                <h1>Contact Us</h1>
+                <p>Every form of help counts! Reach out to us through the form below or using our contact details.</p>
+            </div>
+
+            <div class="contact-form">
+                <h2>Get in Touch</h2>
+                <form action="#" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+
+            <div class="contact-details">
+                <h2>Our Contact Details</h2>
+                <p>Email: contact@savelivesngo.org</p>
+                <p>Phone: (011) 675 8899</p>
+                <p>Address: 156 Voortreker, Parow, Cape Town</p>
+
+                <div class="social-icons">
+                    <img src="facebook.png"></i></a>
+                    <img src="twitter.png"></i></a>
+                    <img src="linkedin.png"></i></a>
+                    <img src="instagram.png" ></i></a>
+                </div>
+            </div>
+
+            <div class="popup-message" id="popup-message">
+                <p id="popup-text"></p>
+                <button id="popup-close">Close</button>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Save Lives NGO. All rights reserved.</p>
+        </footer>
+
+        <script>
+            document.querySelector('.contact-form form').addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent the default form submission
+
+                // Display the custom popup message
+                document.getElementById('popup-text').innerHTML = "Message sent, we will be in touch with you as soon as possible";
+                document.getElementById('popup-message').style.display = 'block';
+
+                // Close the popup message when the close button is clicked
+                document.getElementById('popup-close').addEventListener('click', function() {
+                    document.getElementById('popup-message').style.display = 'none';
+                });
+
+                // Optionally, you can reset the form fields after submission
+                this.reset();
+            });
+        </script>
+    </body>
+
+    </html>
